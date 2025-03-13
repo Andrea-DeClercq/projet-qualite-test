@@ -39,12 +39,15 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: npm install && npm install --prefix client-vue
 
-      - name: Start server in background
+      - name: Start backend server
         run: npm start &
+      
+      - name: Start frontend server
+        run: npm run dev --prefix client-vue &
 
-      - name: Wait for server to be ready
+      - name: Wait for servers to be ready
         run: sleep 10
 
       - name: Install Playwright Browsers
@@ -53,7 +56,7 @@ jobs:
       - name: Run Playwright tests
         run: npm run test:e2e || true
 
-  performance-tests:
+  artillery-performance-tests:
     name: Tests de Performance (Artillery)
     runs-on: ubuntu-latest
     needs: playwright-tests
@@ -69,11 +72,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Start server in background
+      - name: Start backend server
         run: npm start &
 
-      - name: Wait for server to be ready
+      - name: Wait for backend to be ready
         run: sleep 10
 
-      - name: Run Performance tests
+      - name: Run Artillery performance tests
         run: npm run test:performance || true

@@ -45,7 +45,7 @@ test.describe("Interface Calculatrice - Tests UI et Historique", () => {
         await page.click('button:text("0")');
         await page.click('button:text("=")');
 
-        await expect(page.locator('.display')).toHaveValue('Erreur : Division par 0');
+        await expect(page.locator('.display')).toHaveValue('Division par zéro impossible.');
     });
 
     test("Historique des calculs est mis à jour", async ({ page }) => {
