@@ -9,7 +9,6 @@ L'application est un TP sur la **qualité logicielle**, avec une utilisation de 
 ## 📌 **🛠️ Technologies utilisées**
 - **Frontend** : Vue.js + Vite
 - **Backend** : Node.js + Express
-- **Base de données** : Aucune (calculs en mémoire)
 - **Tests** :
   - **Tests unitaires** → Jest
   - **Tests E2E** → Playwright
