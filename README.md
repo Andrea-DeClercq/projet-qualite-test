@@ -53,7 +53,7 @@ npm run dev
 
 ### **4️⃣ Accéder à l’application**
     Frontend Vue.js : http://localhost:5173
-    API Backend : http://localhost:3000
+    API Backend : http://localhost:3000/api-docs , l'endpoint swagger de l'API.
 
 ## **📌 🔍 Fonctionnalités**
 
@@ -96,7 +96,7 @@ docker run -p 3000:3000 -p 8080:80 calculatrice-app
 ```
 
     Accéder au frontend : http://localhost:8080
-    Accéder à l’API : http://localhost:3000
+    Accéder à l’API : http://localhost:3000/api-docs , l'endpoint swagger de l'API.
 
 ## **📌 ⚙️ CI/CD avec GitHub Actions**
 
