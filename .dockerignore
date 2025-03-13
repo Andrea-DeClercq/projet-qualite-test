@@ -1,4 +1,6 @@
 node_modules
-npm-debug.log
-.env
+front-calculator/node_modules
+front-calculator/dist
 .git
+.DS_Store
+npm-debug.log

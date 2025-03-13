@@ -1,10 +1,10 @@
 # Build du frontend Vue.js
 FROM node:18 AS build-frontend
-WORKDIR /app/client-vue
+WORKDIR /app/front-calculator
 
-COPY client-vue/package.json client-vue/package-lock.json ./
+COPY front-calculator/package.json front-calculator/package-lock.json ./
 RUN npm install
-COPY client-vue ./
+COPY front-calculator ./
 RUN npm run build
 
 # Build du backend Node.js
@@ -17,7 +17,7 @@ COPY . .
 
 # Serveur Nginx pour le frontend
 FROM nginx:alpine AS frontend
-COPY --from=build-frontend /app/client-vue/dist /usr/share/nginx/html
+COPY --from=build-frontend /app/front-calculator/dist /usr/share/nginx/html
 
 # Conteneur final pour exécuter l’API + Serveur
 FROM node:18
